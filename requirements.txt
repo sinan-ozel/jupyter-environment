@@ -16,3 +16,4 @@ fastparquet
 ouilookup==0.2.4
 hiredis==2.0.0
 dtw-python==1.1.10
+statsmodels
