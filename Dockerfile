@@ -4,6 +4,7 @@ FROM python:3.9
 RUN apt update
 RUN apt install -y nodejs
 RUN apt install -y npm
+RUN apt install -y graphviz
 
 WORKDIR /root/
 
