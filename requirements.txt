@@ -20,4 +20,6 @@ statsmodels
 tensorflow
 pydot
 scikit-surprise
+networkx
+featuretools==0.27.0
 

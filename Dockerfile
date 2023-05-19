@@ -5,6 +5,7 @@ RUN apt update
 RUN apt install -y nodejs
 RUN apt install -y npm
 RUN apt install -y graphviz
+RUN apt install -y redis
 
 WORKDIR /root/
 
@@ -13,6 +14,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 RUN pip install -i https://test.pypi.org/simple/ extreme-venue-sdk
 RUN rm requirements.txt
+RUN pip install jupyter_contrib_nbextensions
+RUN jupyter contrib nbextension install --user
 RUN jupyter nbextension enable --py widgetsnbextension
 RUN jupyter labextension enable @jupyterlab/toc
 
