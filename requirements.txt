@@ -1,5 +1,5 @@
 pandas==1.3.4
-sklearn
+scikit-learn
 jupyterlab==3.2.3
 ipywidgets
 google-cloud-bigquery
