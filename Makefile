@@ -8,7 +8,7 @@ start:
 	docker run \
 		--env GRANT_SUDO=yes\
 		--mount type=bind,source="$(CWD)/notebooks",target=/jupyter/notebooks\
-		--memory=4G\
-		--cpus=4\
+		--memory=8G\
+		--cpus=2\
 		--publish 8888:8888\
 		local-jupyter
