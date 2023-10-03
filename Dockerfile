@@ -14,18 +14,16 @@ RUN echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://
 RUN apt update
 RUN apt install -y redis-server redis
 
-# RUN redis-server --daemonize yes
-
 WORKDIR /root/
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
 COPY requirements.txt .
+RUN pip install --upgrade setuptools pip
+RUN pip install --upgrade "ipython[all]"
 RUN pip install -r requirements.txt
 RUN pip install -i https://test.pypi.org/simple/ extreme-venue-sdk
 RUN rm requirements.txt
 RUN pip install jupyter_contrib_nbextensions
-RUN jupyter contrib nbextension install --user
-RUN jupyter nbextension enable --py widgetsnbextension
 RUN jupyter labextension enable @jupyterlab/toc
 
 RUN mkdir -p .jupyter/
